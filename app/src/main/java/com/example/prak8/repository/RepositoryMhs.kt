@@ -7,4 +7,9 @@ interface RepositoryMhs {
     suspend fun insertMhs(mahasiswa: Mahasiswa)
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>        // mendapatkan semua data mhs dlm bentuk aliran data flow
 
+    fun getMhs(nim: String): Flow<Mahasiswa>            // mengambail data mhs berdasarkan NIM
+
+
+
+
 }
