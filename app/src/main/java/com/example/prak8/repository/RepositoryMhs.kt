@@ -8,7 +8,7 @@ interface RepositoryMhs {
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>        // mendapatkan semua data mhs dlm bentuk aliran data flow
 
     fun getMhs(nim: String): Flow<Mahasiswa>            // mengambail data mhs berdasarkan NIM
-
+    suspend fun deleteMhs(mahasiswa: Mahasiswa)         // menghapus data mhs
 
 
 
