@@ -16,6 +16,13 @@ interface MahasiswaDao {
     suspend fun insertMahasiswa(
         mahasiswa:Mahasiswa
     )
+    @Query("SELECT * FROM mahasiswa WHERE nim= :nim")
+    fun  getMahasiswa(nim: String): Flow<Mahasiswa>
+
+
+
+
+
 
 
 
