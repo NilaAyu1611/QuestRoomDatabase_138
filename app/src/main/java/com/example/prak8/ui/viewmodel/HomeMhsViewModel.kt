@@ -15,7 +15,19 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 
+class HomeMhsViewModel (
+    private val repositoryMhs: RepositoryMhs
+) : ViewModel(){
+    val  homeUiState : StateFlow<HomeUiState> = repositoryMhs.getAllMahasiswa()
+        .filterNotNull()
+        .map {
+            HomeUiState(
+                listMhs = it.toList(),
+                isLoading = false,
+            )
+        }
 
+}
 
 data class HomeUiState(
     val listMhs: List<Mahasiswa> = listOf(),
