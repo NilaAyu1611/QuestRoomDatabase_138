@@ -151,3 +151,26 @@ fun BodyHomeMhsView (
 
 
 
+
+@Composable
+fun ListMahasiswa(
+    listMhs: List<Mahasiswa>,
+    modifier: Modifier = Modifier,
+    onClik: (String) -> Unit = { }
+){
+    LazyColumn(
+        modifier = modifier
+    ) {
+        items(
+            items = listMhs,
+            itemContent = {mhs ->
+                CardMhs(
+                    mhs = mhs,
+                    onClik = {onClik(mhs.nim)}
+                )
+            }
+        )
+    }
+}
+
+
